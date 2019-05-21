@@ -1,0 +1,31 @@
+/** mixin **/
+@mixin size($width, $height){
+  width: $width/$ppr;
+  height: $height/$ppr;
+}
+@mixin width($width){
+  width: $width/$ppr;
+}
+@mixin height($height){
+  height: $height/$ppr;
+}
+@mixin fontSize($font){
+  font-size: $font/$ppr;
+}
+
+@function rem($px){
+	@return $px/$ppr;
+}
+
+$base: 10px;
+$divide: 10 !default;
+$pswWidth: 750;
+$ppr: $pswWidth * 1px / $divide/ 1rem;
+
+
+.container {
+    width: rem(200px);
+    height: rem(200px);
+    border: 1px solid #f00;
+    background-color: #000;
+}
